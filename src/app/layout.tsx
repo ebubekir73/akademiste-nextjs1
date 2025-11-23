@@ -1,0 +1,27 @@
+import type { Metadata } from 'next'
+import './globals.css'
+import Layout from '@/components/Layout'
+
+export const metadata: Metadata = {
+  title: 'Boğaziçi Akademi - Online Özel Ders',
+  description: 'Türkiye\'nin en başarılı öğrencilerinden birebir özel ders alın, sınav sürecinizi bir üst seviyeye taşıyın.',
+  icons: {
+    icon: '/images/WhatsApp_Image_2025-10-18_at_15.52.54-removebg-preview.png',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="tr">
+      <body>
+        <Layout>
+          {children}
+        </Layout>
+      </body>
+    </html>
+  )
+}
