@@ -28,11 +28,25 @@ body {
     padding: 0;
 }
 
+/* Responsive base styles */
+* {
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive containers */
 .container {
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
+
+/* Container override - already defined above */
 
 /* Header */
 .header {
@@ -43,6 +57,7 @@ body {
     left: 0;
     right: 0;
     z-index: 1000;
+    height: 80px; /* Sabit yükseklik */
 }
 
 .header .container {
@@ -199,6 +214,7 @@ body {
     align-items: center;
     position: relative;
     overflow: hidden;
+    padding-top: 70px; /* Daha az boşluk */
 }
 
 .hero-content {
@@ -271,14 +287,16 @@ body {
 
 /* Pricing Section */
 .pricing {
-    padding: 80px 0 40px 0;
+    padding: 60px 0 40px 0;
     background: var(--color-bg);
 }
 
 .pricing-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 /* Single card pages - narrower layout */
@@ -291,7 +309,7 @@ body {
 .pricing-card {
     background: var(--color-card);
     border-radius: 25px;
-    padding: 40px 30px;
+    padding: 35px 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s;
     position: relative;
@@ -301,7 +319,8 @@ body {
     justify-content: space-between;
     height: 100%;
     text-align: center;
-    min-height: auto;
+    min-height: 520px;
+    max-height: none;
 }
 
 .pricing-card:hover {
@@ -315,41 +334,44 @@ body {
 }
 
 .card-title {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     font-weight: 700;
     color: var(--color-text);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .card-price {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: var(--color-primary);
-    margin-bottom: 15px;
+    margin-bottom: 12px;
 }
 
 .card-description {
     color: var(--color-subtext);
     margin-bottom: 20px;
     line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 .card-features {
     list-style: none;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    min-height: 120px;
+    justify-content: flex-start;
+    gap: 8px;
+    min-height: 140px;
 }
 
 .card-features li {
-    padding: 12px 0;
+    padding: 8px 0;
     color: var(--color-subtext);
     position: relative;
     padding-left: 25px;
-    line-height: 1.4;
+    line-height: 1.5;
+    font-size: 0.9rem;
 }
 
 .card-features li::before {
@@ -595,6 +617,16 @@ body {
     
     .floating-instagram i {
         font-size: 1.8rem;
+    }
+    
+    /* Floating call button mobile adjustments */
+    .floating-call {
+        right: 20px;
+        top: 40%; /* Biraz yukarıda konumlandır */
+        padding: 20px 12px; /* Daha büyük padding */
+        font-size: 0.9rem; /* Daha büyük font */
+        min-width: 50px; /* Minimum genişlik */
+        z-index: 1001;
     }
 }
 
@@ -1095,10 +1127,19 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Hero section mobile spacing */
+    .hero {
+        padding-top: 100px; /* Header yüksekliği için ayarlandı */
+        padding-bottom: 30px;
+        min-height: 60vh; /* Daha kompakt */
+    }
+    
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
+        padding-top: 30px; /* Biraz daha fazla boşluk */
+        margin-top: 0;
     }
 
     .tutor-image {
@@ -1107,6 +1148,8 @@ body {
 
     .hero-title {
         font-size: 2.2rem;
+        margin-top: 20px; /* Biraz daha fazla başlık boşluğu */
+        padding-top: 0;
     }
 
     .hero-description {
@@ -1118,20 +1161,117 @@ body {
     }
 
     .nav {
-        display: none;
+        display: flex !important;
+        gap: 8px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .nav-link {
+        padding: 6px 10px;
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+    
+    .nav-dropdown {
+        position: relative;
+    }
+    
+    .dropdown-toggle {
+        padding: 6px 10px;
+        font-size: 0.75rem;
     }
 
     .header-actions {
         gap: 10px;
     }
+    
+    /* Header mobile layout */
+    .header .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 8px 15px;
+        gap: 8px;
+    }
+    
+    .header {
+        height: auto;
+        min-height: 80px;
+    }
+    
+    .logo {
+        order: 1;
+    }
+    
+    .nav {
+        order: 2;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .header-actions {
+        order: 3;
+        display: none; /* Mobilde gizle */
+    }
+    
+    /* Container mobile */
+    .container {
+        padding: 0 15px;
+    }
 
     .pricing-cards {
         grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .pricing-card {
+        padding: 25px 20px;
+        margin: 0 10px;
+    }
+    
+    /* Button responsive */
+    .btn-hero, .btn-card {
+        padding: 15px 25px;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    /* Section titles mobile */
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 15px;
+        text-align: center;
     }
 
     .footer-content {
         grid-template-columns: 1fr;
-        gap: 40px;
+        gap: 30px;
+        text-align: center;
+    }
+    
+    .footer {
+        margin: 0 10px 10px 10px;
+        padding: 40px 0 20px;
+    }
+    
+    /* Teachers grid mobile */
+    .teachers-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .teacher-card, .coach-card {
+        padding: 20px;
+        margin: 0 10px;
+    }
+    
+    .teacher-photo, .coach-photo {
+        width: 100px;
+        height: 100px;
     }
 
     .filter-container {
@@ -1429,18 +1569,146 @@ body {
         padding: 0 15px;
     }
     
+    /* Extra small screens compact spacing */
+    .hero {
+        padding-top: 110px; /* Header yüksekliği için ayarlandı */
+        padding-bottom: 30px;
+        min-height: 60vh; /* Daha az yükseklik */
+    }
+    
+    .hero-content {
+        padding-top: 30px; /* Biraz daha fazla içerik boşluğu */
+        margin-top: 0;
+    }
+    
     .hero-title {
         font-size: 2rem;
+        margin-top: 20px; /* Biraz daha fazla üst boşluk */
+        padding-top: 0;
+        line-height: 1.2;
     }
     
     .hero-description {
         font-size: 1rem;
+        margin-top: 15px;
     }
     
+    /* Extra small responsive */
+    .container {
+        padding: 0 10px;
+    }
+    
+    .pricing-card {
+        padding: 20px 15px;
+        margin: 0 5px;
+    }
+    
+    .btn-hero, .btn-card {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .logo-image {
+        height: 35px;
+    }
+    
+    .header .container {
+        padding: 8px 10px;
+    }
+    
+    /* Navigation visible but more compact on very small screens */
+    .nav {
+        display: flex !important;
+        gap: 4px;
+        flex-wrap: wrap;
+    }
+    
+    .nav-link {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    /* Header height adjustment for small screens */
+    .header {
+        height: auto;
+        min-height: 85px;
+    }
+    
+    /* Floating call button for very small screens */
+    .floating-call {
+        right: 15px;
+        top: 35%; /* Daha yukarıda */
+        padding: 18px 10px; /* Daha büyük padding */
+        font-size: 0.85rem; /* Daha büyük font */
+        min-width: 45px; /* Minimum genişlik */
+    }
+
     .footer-bottom {
         flex-direction: column;
         gap: 20px;
         text-align: center;
+    }
+}
+
+/* Tablet responsive (769px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+    .container {
+        padding: 0 30px;
+    }
+    
+    .hero-content {
+        gap: 30px;
+    }
+    
+    .hero-title {
+        font-size: 2.4rem;
+    }
+    
+    .hero-description {
+        font-size: 0.95rem;
+    }
+    
+    .pricing-cards {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+    
+    .teachers-grid, .coaches-grid {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+    }
+    
+    .nav {
+        gap: 20px;
+    }
+    
+    .nav-link {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Large screens optimization */
+@media (min-width: 1200px) {
+    .container {
+        padding: 0 40px;
+    }
+    
+    .hero-content {
+        gap: 60px;
+    }
+    
+    .pricing-cards {
+        gap: 40px;
     }
 }
 

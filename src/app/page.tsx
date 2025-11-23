@@ -202,12 +202,12 @@ export default function Home() {
             </div>
             <div className="stat-card">
               <div className="stat-number">89</div>
-              <div className="stat-label">YKS İlk 1000</div>
+              <div className="stat-label">YKS İlk 10.000</div>
               <div className="stat-description">Öğrencimiz</div>
             </div>
             <div className="stat-card">
               <div className="stat-number">347</div>
-              <div className="stat-label">YKS İlk 100000</div>
+              <div className="stat-label">YKS İlk 100.000</div>
               <div className="stat-description">Öğrencimiz</div>
             </div>
           </div>
@@ -240,7 +240,7 @@ export default function Home() {
 
             <div className="pricing-card">
               <h3 className="card-title">Koçluk</h3>
-              <div className="card-price">₺ 2600 / Aylık</div>
+              <div className="card-price">₺ 2800 / Aylık</div>
               <p className="card-description">Hedeflerine ulaşmanda tam da ihtiyacın olan destek.</p>
               <ul className="card-features">
                 <li>Sana Özel Derece Öğrencisi Koç</li>

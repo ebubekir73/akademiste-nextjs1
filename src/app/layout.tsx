@@ -8,6 +8,11 @@ export const metadata: Metadata = {
   icons: {
     icon: '/images/WhatsApp_Image_2025-10-18_at_15.52.54-removebg-preview.png',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
 }
 
 export default function RootLayout({

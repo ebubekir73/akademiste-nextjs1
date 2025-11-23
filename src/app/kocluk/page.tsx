@@ -104,7 +104,7 @@ export default function CoachingPage() {
           <div className="pricing-cards single-card">
             <div className="pricing-card featured">
               <h3 className="card-title">Koçluk</h3>
-              <div className="card-price">₺ 2600 / Aylık</div>
+              <div className="card-price">₺ 2800 / Aylık</div>
               <p className="card-description">Hedeflerine ulaşmanda tam da ihtiyacın olan destek.</p>
               <ul className="card-features">
                 <li>Sana Özel Derece Öğrencisi Koç</li>
