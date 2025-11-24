@@ -196,7 +196,7 @@ export default function Home() {
               <div className="stat-description">Öğrencimiz</div>
             </div>
             <div className="stat-card">
-              <div className="stat-number">12</div>
+              <div className="stat-number">3</div>
               <div className="stat-label">YKS İlk 100</div>
               <div className="stat-description">Öğrencimiz</div>
             </div>
