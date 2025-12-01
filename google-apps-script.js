@@ -52,7 +52,12 @@ function doPost(e) {
         'Sınıf',
         'Alan',
         'Ders',
-        'Öğrenci/Veli'
+        'Öğrenci/Veli',
+        'Form Tipi',
+        'Arama Talebi',
+        'İlgi Alanı',
+        'Uygun Saat',
+        'Ek Notlar'
       ];
       sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
       
@@ -72,7 +77,12 @@ function doPost(e) {
       data['Sınıf'] || '',
       data['Alan'] || '',
       data['Ders'] || '',
-      data['Öğrenci/Veli'] || ''
+      data['Öğrenci/Veli'] || '',
+      data['Form Tipi'] || 'kayit-formu',
+      data['Arama Talebi'] || 'Hayır',
+      data['İlgi Alanı'] || '',
+      data['Uygun Saat'] || '',
+      data['Ek Notlar'] || ''
     ];
 
     // Yeni satırı ekle
@@ -131,7 +141,7 @@ function doGet(e) {
     
     let data = [];
     if (lastRow > 1) {
-      const range = sheet.getRange(startRow, 1, lastRow - startRow + 1, 8);
+      const range = sheet.getRange(startRow, 1, lastRow - startRow + 1, 13);
       const values = range.getValues();
       
       data = values.map(row => ({
@@ -200,7 +210,7 @@ function clearSheet() {
   const sheet = spreadsheet.getSheetByName(SHEET_NAME);
   
   if (sheet && sheet.getLastRow() > 1) {
-    sheet.getRange(2, 1, sheet.getLastRow() - 1, 8).clearContent();
+    sheet.getRange(2, 1, sheet.getLastRow() - 1, 13).clearContent();
     console.log('Sheet temizlendi');
   }
 }
@@ -229,7 +239,12 @@ function setup() {
         'Sınıf',
         'Alan',
         'Ders',
-        'Öğrenci/Veli'
+        'Öğrenci/Veli',
+        'Form Tipi',
+        'Arama Talebi',
+        'İlgi Alanı',
+        'Uygun Saat',
+        'Ek Notlar'
       ];
       sheet.getRange(1, 1, 1, headers.length).setValues([headers]);
       

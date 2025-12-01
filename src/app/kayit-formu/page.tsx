@@ -12,7 +12,6 @@ export default function RegistrationPage() {
     alan: '',
     ders: [],
     ogrenciVeli: undefined,
-    email: ''
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -45,7 +44,6 @@ export default function RegistrationPage() {
           alan: '',
           ders: [],
           ogrenciVeli: undefined,
-          email: '',
           ekNotlar: '',
           aramaIstegi: false
         });
@@ -130,15 +128,6 @@ export default function RegistrationPage() {
                 {errors.telefon && <span className="error-message">{errors.telefon}</span>}
               </div>
 
-              <div className="form-group">
-                <label htmlFor="email">E-posta</label>
-                <input
-                  type="email"
-                  id="email"
-                  value={formData.email || ''}
-                  onChange={(e) => setFormData(prev => ({...prev, email: e.target.value}))}
-                />
-              </div>
 
               <div className="form-group">
                 <label htmlFor="sinif">Sınıf *</label>

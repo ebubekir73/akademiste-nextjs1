@@ -529,7 +529,7 @@ function TeachersPageContent() {
       name: "Fatima Alım",
       university: "Marmara Sosyoloji",
       yks: "YKS 2025 SÖZ: 3330",
-      lessons: "Boğaziçi Akademi Öğretmeni",
+      lessons: "Koçluk",
       photo: "/images/ekip (Hikayeniz) kopyası (69).png"
     },
     {
@@ -557,14 +557,14 @@ function TeachersPageContent() {
       name: "Elif Aslı Güneykaya",
       university: "Boğaziçi Kimya Öğretmenliği",
       yks: "YKS 2023 SAY: 54324",
-      lessons: "Boğaziçi Akademi Öğretmeni",
+      lessons: "Koçluk",
       photo: "/images/ekip (Hikayeniz) kopyası (73).png"
     },
     {
       name: "Enes Furkan Gözüdik",
       university: "Boğaziçi Matematik",
       yks: "YKS 2024 SAY: 7926",
-      lessons: "Boğaziçi Akademi Öğretmeni",
+      lessons: "Koçluk",
       photo: "/images/ekip (Hikayeniz) kopyası (74).png"
     },
     {
@@ -620,7 +620,7 @@ function TeachersPageContent() {
       name: "Alper Eren Yıldız",
       university: "KTÜ Diş Hek.",
       yks: "YKS 2023 SAY: 36006",
-      lessons: "Boğaziçi Akademi Öğretmeni",
+      lessons: "Koçluk",
       photo: "/images/ekip (Hikayeniz) kopyası (83).png"
     },
     {
@@ -634,7 +634,7 @@ function TeachersPageContent() {
       name: "Merve Bodur",
       university: "Namık Kemal Tıp",
       yks: "YKS 2023 SAY: 19646",
-      lessons: "Boğaziçi Akademi Öğretmeni",
+      lessons: "Koçluk",
       photo: "/images/ekip (Hikayeniz) kopyası (85).png"
     },
     {
@@ -1328,7 +1328,13 @@ function TeachersPageContent() {
                 <h3>{teacher.name}</h3>
                 <div className="teacher-university">{teacher.university}</div>
                 <div className="teacher-yks">{teacher.yks}</div>
-                <div className="teacher-description">{teacher.lessons}</div>
+                <div className="teacher-lessons">
+                  {teacher.lessons.split(',').map((lesson, lessonIndex) => (
+                    <span key={lessonIndex} className="lesson-bubble">
+                      {lesson.trim()}
+                    </span>
+                  ))}
+                </div>
               </div>
             </div>
           ))}

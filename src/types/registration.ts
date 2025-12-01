@@ -23,6 +23,11 @@ export interface GoogleSheetsRow {
   Alan: string;
   Ders: string;
   'Öğrenci/Veli': string;
+  'Form Tipi'?: string;
+  'Arama Talebi'?: string;
+  'İlgi Alanı'?: string;
+  'Uygun Saat'?: string;
+  'Ek Notlar'?: string;
 }
 
 // API Response tipi

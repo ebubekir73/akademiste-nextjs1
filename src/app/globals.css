@@ -258,18 +258,20 @@ img {
     background: var(--color-gradient);
     color: white;
     border: none;
-    padding: 18px 35px;
+    padding: 18px;
     border-radius: 30px;
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 10px;
     transition: all 0.3s;
     box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
     margin-top: 10px;
     text-decoration: none;
+    width: 100%;
 }
 
 .btn-hero:hover {
@@ -369,17 +371,22 @@ img {
     padding: 8px 0;
     color: var(--color-subtext);
     position: relative;
-    padding-left: 25px;
+    padding-left: 0;
     line-height: 1.5;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
 }
 
 .card-features li::before {
     content: '✓';
-    position: absolute;
-    left: 0;
     color: var(--color-secondary);
     font-weight: bold;
+    margin-right: 8px;
+    position: static;
 }
 
 .btn-card {
@@ -722,10 +729,8 @@ img {
     }
 }
 
-/* Pause testimonials animation on hover */
-.testimonials:hover .testimonials-track {
-    animation-play-state: paused;
-}
+/* Testimonials animation runs continuously without pause */
+/* Removed hover pause effect for continuous scrolling */
 
 /* YKS Statistics Section */
 .yks-statistics {
@@ -1063,9 +1068,7 @@ img {
     transition: transform 0.3s ease;
 }
 
-.teacher-card:hover {
-    transform: translateY(-10px);
-}
+/* Removed hover effect for teacher cards */
 
 .teacher-photo {
     width: 120px;
@@ -1119,10 +1122,30 @@ img {
     margin-bottom: 10px;
 }
 
-.teacher-description {
-    color: #666;
-    line-height: 1.5;
+/* Updated teacher lessons styling with bubbles */
+.teacher-lessons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-bottom: 15px;
+    justify-content: center;
+}
+
+.lesson-bubble {
+    background: linear-gradient(135deg, #60A5FA, #93C5FD);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(96, 165, 250, 0.3);
+    transition: all 0.2s ease;
+}
+
+.lesson-bubble:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(96, 165, 250, 0.4);
 }
 
 /* Responsive Design */
