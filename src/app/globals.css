@@ -1070,6 +1070,87 @@ img {
 
 /* Removed hover effect for teacher cards */
 
+/* Active Filter Display */
+.active-filter-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 20px 0;
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #EBF4FF 0%, #DBEAFE 100%);
+    border-radius: 15px;
+    border: 1px solid #BFDBFE;
+}
+
+.active-filter-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
+}
+
+.active-filter-badge i.fa-filter {
+    font-size: 0.8rem;
+}
+
+.active-filter-badge strong {
+    font-weight: 600;
+}
+
+.clear-filter-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 5px;
+}
+
+.clear-filter-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.clear-filter-btn i {
+    font-size: 0.7rem;
+}
+
+.teacher-count {
+    color: var(--color-subtext);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Mobile responsive for active filter */
+@media (max-width: 768px) {
+    .active-filter-display {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .active-filter-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .teacher-count {
+        font-size: 0.8rem;
+    }
+}
+
 .teacher-photo {
     width: 120px;
     height: 120px;

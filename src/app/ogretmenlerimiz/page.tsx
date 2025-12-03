@@ -1153,6 +1153,33 @@ function TeachersPageContent() {
     setOpenDropdown(null); // Close dropdowns after filtering
   };
 
+  // Get filter display name
+  const getFilterDisplayName = (filter: string) => {
+    const filterNames: { [key: string]: string } = {
+      'all': 'Tümü',
+      'ortaokul': 'Ortaokul',
+      'lise': 'Lise',
+      'matematik': 'Matematik',
+      'fizik': 'Fizik',
+      'kimya': 'Kimya',
+      'biyoloji': 'Biyoloji',
+      'fen': 'Fen Bilgisi',
+      'turkce': 'Türkçe',
+      'edebiyat': 'Edebiyat',
+      'tarih': 'Tarih',
+      'cografya': 'Coğrafya',
+      'sosyal': 'Sosyal Bilgiler',
+      'ingilizce': 'İngilizce',
+      'almanca': 'Almanca',
+      'fransizca': 'Fransızca',
+      'kocluk': 'Koçluk',
+      'bogazici': 'Boğaziçi Üniversitesi',
+      'tip': 'Tıp Fakültesi',
+      'muhendislik': 'Mühendislik'
+    };
+    return filterNames[filter] || filter;
+  };
+
   const toggleDropdown = (dropdownName: string) => {
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
   };
@@ -1310,6 +1337,26 @@ function TeachersPageContent() {
                 </button>
               </div>
             </div>
+          </div>
+        </div>
+
+        {/* Active Filter Display */}
+        <div className="active-filter-display">
+          <div className="active-filter-badge">
+            <i className="fas fa-filter"></i>
+            <span>Filtre: <strong>{getFilterDisplayName(activeFilter)}</strong></span>
+            {activeFilter !== 'all' && (
+              <button 
+                className="clear-filter-btn" 
+                onClick={() => handleFilter('all')}
+                title="Filtreyi Temizle"
+              >
+                <i className="fas fa-times"></i>
+              </button>
+            )}
+          </div>
+          <div className="teacher-count">
+            <span>{filteredTeachers.length} öğretmen bulundu</span>
           </div>
         </div>
         
