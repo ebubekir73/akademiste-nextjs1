@@ -105,7 +105,7 @@ export default function ForeignLanguagePage() {
             <div className="pricing-card featured">
               <h3 className="card-title">Yabancı Dil Özel Ders</h3>
               <div className="card-price">₺ 1400 / Derslik</div>
-              <p className="card-description">İngilizce, Almanca, Fransızca dillerinde uzman öğretmenlerle birebir ders.</p>
+              <p className="card-description">Almanca, Fransızca dillerinde uzman öğretmenlerle birebir ders.</p>
               <ul className="card-features">
                 <li>YDT Hazırlık Uzmanı Öğretmen</li>
                 <li>Birebir Ders</li>

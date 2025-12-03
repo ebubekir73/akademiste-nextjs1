@@ -15,7 +15,7 @@ interface Teacher {
 function TeachersPageContent() {
   const [teachers, setTeachers] = useState<Teacher[]>([]);
   const [filteredTeachers, setFilteredTeachers] = useState<Teacher[]>([]);
-  const [activeFilter, setActiveFilter] = useState('all');
+  const [activeFilters, setActiveFilters] = useState<string[]>([]);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const searchParams = useSearchParams();
 
@@ -1137,20 +1137,62 @@ function TeachersPageContent() {
   };
 
   const handleFilter = (filterType: string) => {
-    setActiveFilter(filterType);
-    
-    let filtered: Teacher[] = [];
+    let newFilters: string[];
     
     if (filterType === 'all') {
-      filtered = teachers;
-    } else if (filterType === 'ortaokul' || filterType === 'lise') {
-      filtered = filterByLevel(filterType);
+      // Clear all filters
+      newFilters = [];
     } else {
-      filtered = filterBySubject(filterType);
+      // Toggle filter
+      if (activeFilters.includes(filterType)) {
+        newFilters = activeFilters.filter(f => f !== filterType);
+      } else {
+        newFilters = [...activeFilters, filterType];
+      }
     }
     
+    setActiveFilters(newFilters);
+    applyFilters(newFilters);
+  };
+
+  const applyFilters = (filters: string[]) => {
+    if (filters.length === 0) {
+      setFilteredTeachers(teachers);
+      return;
+    }
+
+    let filtered: Teacher[] = teachers;
+    
+    // Apply each filter
+    filters.forEach(filterType => {
+      if (filterType === 'ortaokul' || filterType === 'lise') {
+        const levelFiltered = filterByLevel(filterType);
+        filtered = filtered.filter(teacher => levelFiltered.includes(teacher));
+      } else if (filterType === 'ingilizce') {
+        // İngilizce filtresi için yabancı dil öğretmenlerini göster
+        const foreignLanguageFiltered = teachers.filter(teacher => {
+          const lessonsLower = teacher.lessons.toLowerCase();
+          return lessonsLower.includes('almanca') || 
+                 lessonsLower.includes('fransızca') || 
+                 lessonsLower.includes('ingilizce') ||
+                 lessonsLower.includes('yabancı dil') ||
+                 lessonsLower.includes('yds') ||
+                 lessonsLower.includes('dil');
+        });
+        filtered = filtered.filter(teacher => foreignLanguageFiltered.includes(teacher));
+      } else {
+        const subjectFiltered = filterBySubject(filterType);
+        filtered = filtered.filter(teacher => subjectFiltered.includes(teacher));
+      }
+    });
+    
     setFilteredTeachers(filtered);
-    setOpenDropdown(null); // Close dropdowns after filtering
+  };
+
+  const clearAllFilters = () => {
+    setActiveFilters([]);
+    setFilteredTeachers(teachers);
+    setOpenDropdown(null);
   };
 
   // Get filter display name
@@ -1180,6 +1222,13 @@ function TeachersPageContent() {
     return filterNames[filter] || filter;
   };
 
+  // Apply filters when teachers data changes
+  useEffect(() => {
+    if (teachers.length > 0) {
+      applyFilters(activeFilters);
+    }
+  }, [teachers, activeFilters]);
+
   const toggleDropdown = (dropdownName: string) => {
     setOpenDropdown(openDropdown === dropdownName ? null : dropdownName);
   };
@@ -1191,9 +1240,10 @@ function TeachersPageContent() {
           <h2 className="section-title">Tüm Öğretmenlerimiz</h2>
           <div className="filter-container">
             <button 
-              className={`filter-btn ${activeFilter === 'all' ? 'active' : ''}`} 
+              className={`filter-btn clear-all ${activeFilters.length === 0 ? 'active' : ''}`} 
               onClick={() => handleFilter('all')}
             >
+              <i className="fas fa-list"></i>
               Tümü
             </button>
             
@@ -1204,13 +1254,13 @@ function TeachersPageContent() {
               </button>
               <div className="dropdown-content">
                 <button 
-                  className={`filter-btn ${activeFilter === 'ortaokul' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('ortaokul') ? 'active' : ''}`} 
                   onClick={() => handleFilter('ortaokul')}
                 >
                   Ortaokul
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'lise' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('lise') ? 'active' : ''}`} 
                   onClick={() => handleFilter('lise')}
                 >
                   Lise
@@ -1225,85 +1275,85 @@ function TeachersPageContent() {
               </button>
               <div className="dropdown-content">
                 <button 
-                  className={`filter-btn ${activeFilter === 'matematik' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('matematik') ? 'active' : ''}`} 
                   onClick={() => handleFilter('matematik')}
                 >
                   Matematik
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'fizik' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('fizik') ? 'active' : ''}`} 
                   onClick={() => handleFilter('fizik')}
                 >
                   Fizik
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'kimya' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('kimya') ? 'active' : ''}`} 
                   onClick={() => handleFilter('kimya')}
                 >
                   Kimya
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'biyoloji' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('biyoloji') ? 'active' : ''}`} 
                   onClick={() => handleFilter('biyoloji')}
                 >
                   Biyoloji
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'fen' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('fen') ? 'active' : ''}`} 
                   onClick={() => handleFilter('fen')}
                 >
                   Fen Bilgisi
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'turkce' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('turkce') ? 'active' : ''}`} 
                   onClick={() => handleFilter('turkce')}
                 >
                   Türkçe
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'edebiyat' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('edebiyat') ? 'active' : ''}`} 
                   onClick={() => handleFilter('edebiyat')}
                 >
                   Edebiyat
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'tarih' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('tarih') ? 'active' : ''}`} 
                   onClick={() => handleFilter('tarih')}
                 >
                   Tarih
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'cografya' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('cografya') ? 'active' : ''}`} 
                   onClick={() => handleFilter('cografya')}
                 >
                   Coğrafya
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'sosyal' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('sosyal') ? 'active' : ''}`} 
                   onClick={() => handleFilter('sosyal')}
                 >
                   Sosyal Bilgiler
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'ingilizce' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('ingilizce') ? 'active' : ''}`} 
                   onClick={() => handleFilter('ingilizce')}
                 >
                   İngilizce
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'almanca' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('almanca') ? 'active' : ''}`} 
                   onClick={() => handleFilter('almanca')}
                 >
                   Almanca
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'fransizca' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('fransizca') ? 'active' : ''}`} 
                   onClick={() => handleFilter('fransizca')}
                 >
                   Fransızca
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'kocluk' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('kocluk') ? 'active' : ''}`} 
                   onClick={() => handleFilter('kocluk')}
                 >
                   Koçluk
@@ -1318,19 +1368,19 @@ function TeachersPageContent() {
               </button>
               <div className="dropdown-content">
                 <button 
-                  className={`filter-btn ${activeFilter === 'bogazici' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('bogazici') ? 'active' : ''}`} 
                   onClick={() => handleFilter('bogazici')}
                 >
                   Boğaziçi Üniversitesi
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'tip' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('tip') ? 'active' : ''}`} 
                   onClick={() => handleFilter('tip')}
                 >
                   Tıp Fakültesi
                 </button>
                 <button 
-                  className={`filter-btn ${activeFilter === 'muhendislik' ? 'active' : ''}`} 
+                  className={`filter-btn checkbox-filter ${activeFilters.includes('muhendislik') ? 'active' : ''}`} 
                   onClick={() => handleFilter('muhendislik')}
                 >
                   Mühendislik
@@ -1342,17 +1392,41 @@ function TeachersPageContent() {
 
         {/* Active Filter Display */}
         <div className="active-filter-display">
-          <div className="active-filter-badge">
-            <i className="fas fa-filter"></i>
-            <span>Filtre: <strong>{getFilterDisplayName(activeFilter)}</strong></span>
-            {activeFilter !== 'all' && (
-              <button 
-                className="clear-filter-btn" 
-                onClick={() => handleFilter('all')}
-                title="Filtreyi Temizle"
-              >
-                <i className="fas fa-times"></i>
-              </button>
+          <div className="active-filters-container">
+            {activeFilters.length === 0 ? (
+              <div className="active-filter-badge">
+                <i className="fas fa-list"></i>
+                <span>Filtre: <strong>Tümü</strong></span>
+              </div>
+            ) : (
+              <div className="multiple-filters">
+                <div className="filter-label">
+                  <i className="fas fa-filter"></i>
+                  <span>Aktif Filtreler:</span>
+                </div>
+                <div className="filter-badges">
+                  {activeFilters.map(filter => (
+                    <div key={filter} className="active-filter-badge">
+                      <span><strong>{getFilterDisplayName(filter)}</strong></span>
+                      <button 
+                        className="clear-single-filter-btn" 
+                        onClick={() => handleFilter(filter)}
+                        title={`${getFilterDisplayName(filter)} filtresini kaldır`}
+                      >
+                        <i className="fas fa-times"></i>
+                      </button>
+                    </div>
+                  ))}
+                  <button 
+                    className="clear-all-filters-btn" 
+                    onClick={clearAllFilters}
+                    title="Tüm filtreleri temizle"
+                  >
+                    <i className="fas fa-trash"></i>
+                    Tümünü Temizle
+                  </button>
+                </div>
+              </div>
             )}
           </div>
           <div className="teacher-count">

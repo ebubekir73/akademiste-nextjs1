@@ -90,6 +90,345 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Teachers Showcase Section */}
+      <section className="teachers-showcase">
+        <div className="container">
+          <div className="teachers-showcase-header">
+            <h2 className="section-title">Öğretmenlerimiz</h2>
+            <p className="section-subtitle">Boğaziçi Akademi'nin başarılı öğretmen kadrosu</p>
+          </div>
+          <div className="teachers-showcase-wrapper">
+            <div className="teachers-showcase-track">
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/ece-cakiroglu.png" 
+                    alt="Ece Çakıroğlu" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Ece Çakıroğlu</h3>
+                  <p className="teacher-showcase-university">Boğaziçi Kimya Müh.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/talha-bora-akpinar.png" 
+                    alt="Talha Bora Akpınar" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Talha Bora Akpınar</h3>
+                  <p className="teacher-showcase-university">Namık Kemal Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/yavuz-selim-satir.png" 
+                    alt="Yavuz Selim Satır" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Yavuz Selim Satır</h3>
+                  <p className="teacher-showcase-university">Türk Alman Bilgisayar Müh.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/nehir-turk.png" 
+                    alt="Nehir Türk" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Nehir Türk</h3>
+                  <p className="teacher-showcase-university">Koç Ünv. Psikoloji</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/sebnem-sayar.png" 
+                    alt="Şebnem Sayar" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Şebnem Sayar</h3>
+                  <p className="teacher-showcase-university">Boğaziçi İşletme</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/abdulsamet-yildirim.png" 
+                    alt="Abdulsamet Yıldırım" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Abdulsamet Yıldırım</h3>
+                  <p className="teacher-showcase-university">Akdeniz Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/doga-nehir-demirkan.png" 
+                    alt="Doğa Nehir Demirkan" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Doğa Nehir Demirkan</h3>
+                  <p className="teacher-showcase-university">Ankara Medipol Diş Hek.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/abdullah-akin-gunduz.png" 
+                    alt="Abdullah Akın Gündüz" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Abdullah Akın Gündüz</h3>
+                  <p className="teacher-showcase-university">İzmir Demokrasi Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/furkan-kaan-sarban.png" 
+                    alt="Furkan Kaan Sarban" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Furkan Kaan Sarban</h3>
+                  <p className="teacher-showcase-university">Namık Kemal Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/umeyir-adar-parin.png" 
+                    alt="Ümeyir Adar Parin" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Ümeyir Adar Parin</h3>
+                  <p className="teacher-showcase-university">Galatasaray Bilgisayar Müh.</p>
+                </div>
+              </div>
+
+              {/* Duplicate for seamless loop */}
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/ece-cakiroglu.png" 
+                    alt="Ece Çakıroğlu" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Ece Çakıroğlu</h3>
+                  <p className="teacher-showcase-university">Boğaziçi Kimya Müh.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/talha-bora-akpinar.png" 
+                    alt="Talha Bora Akpınar" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Talha Bora Akpınar</h3>
+                  <p className="teacher-showcase-university">Namık Kemal Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/yavuz-selim-satir.png" 
+                    alt="Yavuz Selim Satır" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Yavuz Selim Satır</h3>
+                  <p className="teacher-showcase-university">Türk Alman Bilgisayar Müh.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/nehir-turk.png" 
+                    alt="Nehir Türk" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Nehir Türk</h3>
+                  <p className="teacher-showcase-university">Koç Ünv. Psikoloji</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/sebnem-sayar.png" 
+                    alt="Şebnem Sayar" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Şebnem Sayar</h3>
+                  <p className="teacher-showcase-university">Boğaziçi İşletme</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/abdulsamet-yildirim.png" 
+                    alt="Abdulsamet Yıldırım" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Abdulsamet Yıldırım</h3>
+                  <p className="teacher-showcase-university">Akdeniz Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/doga-nehir-demirkan.png" 
+                    alt="Doğa Nehir Demirkan" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Doğa Nehir Demirkan</h3>
+                  <p className="teacher-showcase-university">Ankara Medipol Diş Hek.</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/abdullah-akin-gunduz.png" 
+                    alt="Abdullah Akın Gündüz" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Abdullah Akın Gündüz</h3>
+                  <p className="teacher-showcase-university">İzmir Demokrasi Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/furkan-kaan-sarban.png" 
+                    alt="Furkan Kaan Sarban" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Furkan Kaan Sarban</h3>
+                  <p className="teacher-showcase-university">Namık Kemal Tıp</p>
+                </div>
+              </div>
+
+              <div className="teacher-showcase-card">
+                <div className="teacher-showcase-photo">
+                  <Image 
+                    src="/images/umeyir-adar-parin.png" 
+                    alt="Ümeyir Adar Parin" 
+                    width={150} 
+                    height={150}
+                    className="teacher-image"
+                  />
+                </div>
+                <div className="teacher-showcase-info">
+                  <h3 className="teacher-showcase-name">Ümeyir Adar Parin</h3>
+                  <p className="teacher-showcase-university">Galatasaray Bilgisayar Müh.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="teachers-showcase-cta">
+            <Link href="/ogretmenlerimiz" className="btn-teachers-showcase">
+              Tüm Öğretmenlerimizi Görün
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Testimonials Section */}
       <section className="testimonials">
         <div className="container">
@@ -214,6 +553,92 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Comparison Section */}
+      <section className="comparison-section">
+        <div className="container">
+          <h2 className="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+          <p className="section-subtitle">Geleneksel özel ders ile Boğaziçi Akademi farkını keşfedin</p>
+          
+          <div className="comparison-table">
+            <div className="comparison-header-row">
+              <div className="category-header">Özellikler</div>
+              <div className="traditional-header">
+                <div className="comparison-icon traditional-icon">
+                  <i className="fas fa-home"></i>
+                </div>
+                <h3>Geleneksel Özel Ders</h3>
+              </div>
+              <div className="bogazici-header">
+                <div className="comparison-icon bogazici-icon">
+                  <i className="fas fa-graduation-cap"></i>
+                </div>
+                <h3>Boğaziçi Akademi</h3>
+              </div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Ders Yeri</div>
+              <div className="traditional-cell">Öğretmenin/Öğrencinin evi</div>
+              <div className="bogazici-cell">Evinizin konforunda online</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Ders Saatleri</div>
+              <div className="traditional-cell">Sabit program, değiştirmek zor</div>
+              <div className="bogazici-cell">İstediğiniz saat, esnek program</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Öğretmen Seçimi</div>
+              <div className="traditional-cell">Sınırlı seçenek</div>
+              <div className="bogazici-cell">İster deneyimli öğretmenlerden, ister derece öğrencilerden seçim</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Öğretmen Değişikliği</div>
+              <div className="traditional-cell">Çok zor ve zahmetli</div>
+              <div className="bogazici-cell">İstediğiniz zaman kolayca</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Ders Materyali</div>
+              <div className="traditional-cell">Fiziksel kitaplar</div>
+              <div className="bogazici-cell">Ücretsiz dijital materyaller</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Akran Desteği</div>
+              <div className="traditional-cell">Genelde yok</div>
+              <div className="bogazici-cell">Akran öğrencilerden ders alın</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Performans Takibi</div>
+              <div className="traditional-cell">Manuel ve sınırlı</div>
+              <div className="bogazici-cell">Detaylı raporlama sistemi</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">Ücret</div>
+              <div className="traditional-cell">Genelde daha pahalı</div>
+              <div className="bogazici-cell">Uygun fiyat, paket avantajları</div>
+            </div>
+
+            <div className="comparison-row">
+              <div className="category-cell">İlk Ders</div>
+              <div className="traditional-cell">Ücretli</div>
+              <div className="bogazici-cell">Tamamen ücretsiz deneme</div>
+            </div>
+          </div>
+
+          <div className="comparison-cta">
+            <Link href="/kayit-formu" className="btn-comparison">
+              Hemen Ücretsiz Deneyin
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <section className="pricing" id="pricing">
         <div className="container">
@@ -256,7 +681,7 @@ export default function Home() {
             <div className="pricing-card">
               <h3 className="card-title">Yabancı Dil Özel Ders</h3>
               <div className="card-price">₺ 1400 / Derslik</div>
-              <p className="card-description">İngilizce, Almanca, Fransızca dillerinde uzman öğretmenlerle birebir ders.</p>
+              <p className="card-description">Almanca, Fransızca dillerinde uzman öğretmenlerle birebir ders.</p>
               <ul className="card-features">
                 <li>YDT Hazırlık Uzmanı Öğretmen</li>
                 <li>Birebir Ders</li>

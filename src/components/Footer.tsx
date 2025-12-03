@@ -58,6 +58,9 @@ export default function Footer() {
         </div>
         <div className="footer-bottom">
           <p className="copyright">Copyright © 2025 Boğaziçi Akademi.</p>
+          <div className="footer-links">
+            <Link href="/kvkk">KVKK Aydınlatma Metni</Link>
+          </div>
         </div>
       </div>
     </footer>

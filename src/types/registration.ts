@@ -74,7 +74,7 @@ export const DERS_SECENEKLERI = [
   'Fransızca',
   'Geometri',
   'Felsefe',
-  'DKAB'
+  'Din'
 ] as const;
 
 export type AlanType = typeof ALAN_SECENEKLERI[number];
