@@ -570,7 +570,7 @@ export default function Home() {
               </div>
               <div className="bogazici-header">
                 <div className="comparison-icon bogazici-icon">
-                  <i className="fas fa-graduation-cap"></i>
+                  <div className="bogazici-logo">BA</div>
                 </div>
                 <h3>Boğaziçi Akademi</h3>
               </div>
@@ -578,56 +578,110 @@ export default function Home() {
 
             <div className="comparison-row">
               <div className="category-cell">Ders Yeri</div>
-              <div className="traditional-cell">Öğretmenin/Öğrencinin evi</div>
-              <div className="bogazici-cell">Evinizin konforunda online</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Evde
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Evde online
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Ders Saatleri</div>
-              <div className="traditional-cell">Sabit program, değiştirmek zor</div>
-              <div className="bogazici-cell">İstediğiniz saat, esnek program</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Sabit
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Esnek
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Öğretmen Seçimi</div>
-              <div className="traditional-cell">Sınırlı seçenek</div>
-              <div className="bogazici-cell">İster deneyimli öğretmenlerden, ister derece öğrencilerden seçim</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Kısıtlı
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Deneyimli veya derece öğrencisi
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Öğretmen Değişikliği</div>
-              <div className="traditional-cell">Çok zor ve zahmetli</div>
-              <div className="bogazici-cell">İstediğiniz zaman kolayca</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Zor
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Kolay
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Ders Materyali</div>
-              <div className="traditional-cell">Fiziksel kitaplar</div>
-              <div className="bogazici-cell">Ücretsiz dijital materyaller</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Kitap
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Ücretsiz dijital kaynak
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Akran Desteği</div>
-              <div className="traditional-cell">Genelde yok</div>
-              <div className="bogazici-cell">Akran öğrencilerden ders alın</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Yok
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Akran öğrencilerden ders
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Performans Takibi</div>
-              <div className="traditional-cell">Manuel ve sınırlı</div>
-              <div className="bogazici-cell">Detaylı raporlama sistemi</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Sınırlı
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Detaylı sistem
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">Ücret</div>
-              <div className="traditional-cell">Genelde daha pahalı</div>
-              <div className="bogazici-cell">Uygun fiyat, paket avantajları</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Yüksek
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Uygun, paketli
+              </div>
             </div>
 
             <div className="comparison-row">
               <div className="category-cell">İlk Ders</div>
-              <div className="traditional-cell">Ücretli</div>
-              <div className="bogazici-cell">Tamamen ücretsiz deneme</div>
+              <div className="traditional-cell">
+                <i className="fas fa-times comparison-cross"></i>
+                Ücretli
+              </div>
+              <div className="bogazici-cell">
+                <i className="fas fa-check comparison-check"></i>
+                Ücretsiz deneme
+              </div>
             </div>
           </div>
 
@@ -643,7 +697,22 @@ export default function Home() {
       <section className="pricing" id="pricing">
         <div className="container">
           <div className="pricing-cards">
-            <div className="pricing-card featured">
+            <div className="pricing-card">
+              <h3 className="card-title">Koçluk</h3>
+              <div className="card-price">₺ 2800 / Aylık</div>
+              <p className="card-description">Hedeflerine ulaşmanda tam da ihtiyacın olan destek.</p>
+              <ul className="card-features">
+                <li>Sana Özel Derece Öğrencisi Koç</li>
+                <li>Akademi Platform&apos;una Sınırsız Erişim</li>
+                <li>Sana Özel Günlük Program</li>
+              </ul>
+              <Link href="/kayit-formu" className="btn-card">
+                <Image src="/images/videocamera-removebg-preview.png" alt="Play" className="btn-play-icon" width={24} height={24} />
+                Ücretsiz Tanışma Görüşmesi
+              </Link>
+            </div>
+
+            <div className="pricing-card">
               <h3 className="card-title">Özel Ders</h3>
               <div className="card-price">
                 <div style={{textDecoration: 'line-through', color: '#999'}}>₺ 950 / Derslik</div>
@@ -660,21 +729,6 @@ export default function Home() {
               <Link href="/kayit-formu" className="btn-card">
                 <Image src="/images/videocamera-removebg-preview.png" alt="Play" className="btn-play-icon" width={24} height={24} />
                 Ücretsiz Deneme Dersi
-              </Link>
-            </div>
-
-            <div className="pricing-card">
-              <h3 className="card-title">Koçluk</h3>
-              <div className="card-price">₺ 2800 / Aylık</div>
-              <p className="card-description">Hedeflerine ulaşmanda tam da ihtiyacın olan destek.</p>
-              <ul className="card-features">
-                <li>Sana Özel Derece Öğrencisi Koç</li>
-                <li>Akademi Platform&apos;una Sınırsız Erişim</li>
-                <li>Sana Özel Günlük Program</li>
-              </ul>
-              <Link href="/kayit-formu" className="btn-card">
-                <Image src="/images/videocamera-removebg-preview.png" alt="Play" className="btn-play-icon" width={24} height={24} />
-                Ücretsiz Tanışma Görüşmesi
               </Link>
             </div>
 

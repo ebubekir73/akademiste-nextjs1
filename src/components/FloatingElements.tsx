@@ -4,9 +4,8 @@ export default function FloatingElements() {
   return (
     <>
       {/* Floating Call Button */}
-      <a href="/arama-formu" className="floating-call">
-        <i className="fas fa-phone"></i>
-        <span>Sizi Arayalım</span>
+      <a href="/kayit-formu" className="floating-call">
+        <span>Ücretsiz Deneme Dersi</span>
       </a>
 
       {/* Floating Instagram Button */}

@@ -89,13 +89,6 @@ export default function Header() {
           </div>
           <Link href="/ogretmenlerimiz" className="nav-link">Öğretmenlerimiz</Link>
           <a 
-            href="https://docs.google.com/forms/d/e/1FAIpQLSfUERTmGM6yTgxzo8y00V65tpN1x-vWW02Hi53IwGFRO_pOhQ/viewform" 
-            target="_blank" 
-            className="nav-link"
-          >
-            Ders&nbsp;Ver
-          </a>
-          <a 
             href="#pricing" 
             className="nav-link"
             onClick={handlePackagesClick}
